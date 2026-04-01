@@ -7,7 +7,7 @@ describe('App', () => {
       imports: [App],
     }).compileComponents();
   });
-
+//Test cases are called "it"
   it('should create the app', () => {
     const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
