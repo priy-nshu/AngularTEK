@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './greet.html',
   styleUrl: './greet.css',
 })
-export class Greet {}
+export class Greet {
+  public name:string="Welcome to Angular";
+
+  constructor(){}
+
+  greet()
+  {alert('Show button clicked');}
+  OnDivClick(){alert('Div Clicked');}
+}
