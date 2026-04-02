@@ -13,8 +13,8 @@ export class HeroService {
   getTopheros():Hero[]{
     return HEROSList.slice(1,5  );
   }
-  GetSelectedHero():Hero{
-    return this.selectedHero;
+  GetSelectedHero(): Hero {
+  return this.selectedHero!;
   }
   
 SaveSelectedHero(hero: Hero): void {
