@@ -1,24 +1,28 @@
 import { Component } from '@angular/core';
 import { Hero } from '../Hero';
 import { HeroService } from '../hero-service';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
-  myheroes:Hero[]=[];
-  constructor(private heroService:HeroService){}
+  myheroes: Hero[] = [];
 
-  ngOnInIt():void{
-    this.getHeroes();
+  constructor(private myHeroSvc: HeroService) {}
+
+  ngOnInit() {
+    this.ComponentgetHeroes();
   }
-  getHeroes():void{
-    this.myheroes=this.heroService.getTopheros()
 
-      console.log(this.myheroes);
-    
+  ComponentgetHeroes(): void {
+    this.myHeroSvc.GetTopHeros()
+      .subscribe(hlist => this.myheroes = hlist);
+
+    console.log(this.myheroes);
   }
 }
+

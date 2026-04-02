@@ -1,7 +1,6 @@
-<p>dashboard works!</p>
+<h3>Hero dashboard </h3>
 <div class="heroes-menu">
-  <a *ngFor="let hero of myheroes">
-    {{ hero.id }}
-    {{ hero.name }}
+  <a *ngFor="let hero of myheroes" routerLink="/details/{{hero.id}}">
+    {{hero.name}}    
   </a>
 </div>
