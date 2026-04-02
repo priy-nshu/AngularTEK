@@ -1,3 +1,20 @@
 <div>
-    <table></table>
+  <table class="gridList">
+ 
+      <tr>
+        <th>Student Id</th>
+        <th>Roll Number</th>
+        <th>Name</th>
+        <th>Grade Id</th>
+      </tr>
+
+      @for (item of stdList; track item.StudentId) {
+        <tr>
+          <td>{{ item.StudentId }}</td>
+          <td>{{ item.RollNumber }}</td>
+          <td>{{ item.Name }}</td>
+          <td>{{ item.GradeId }}</td>
+        </tr>
+      } 
+  </table>
 </div>
