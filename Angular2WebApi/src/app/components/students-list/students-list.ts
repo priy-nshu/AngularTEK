@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Student } from '../../models/student.model';
 import { StudentService } from '../../services/student-service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-students-list',
@@ -12,15 +13,17 @@ import { CommonModule } from '@angular/common';
 })
 export class StudentsList {
   stdList: Student[] = [];
-  constructor(private studentService: StudentService) {}
+  constructor(private studentService: StudentService,private router :Router) {}
 
   ngOnInit() {
     this.getData();
   }
   
   getData() {
-    this.studentService.getStudents().subscribe((data: Student[]) => {
-      this.stdList = data as Student[];
-    });
+    this.studentService.getStudents()
+        .subscribe({next: (data) => {this.stdList = data;
+        console.log(data);},
+          error:(e)=>console.error(e)
+        });
   }
 }
