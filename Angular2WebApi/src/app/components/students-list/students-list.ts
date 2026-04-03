@@ -3,11 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { Student } from '../../models/student.model';
 import { StudentService } from '../../services/student-service';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router,RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-students-list',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './students-list.html',
   styleUrl: './students-list.css',
 })

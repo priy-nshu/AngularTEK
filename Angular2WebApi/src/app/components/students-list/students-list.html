@@ -14,15 +14,16 @@
       <tbody>
       @for (item of stdList; track item.StudentId) {
         <tr>
+          <td>
+            <a [routerLink]="['/student-details', item.StudentId]">
+              {{ item.StudentId }}
+              <span>Edit</span>
+      </a>
+          </td>
           <td>{{ item.StudentId }}</td>
           <td>{{ item.RollNumber }}</td>
           <td>{{ item.Name }}</td>
-          <td>{{ item.GradeId }}</td>
-          <td>
-            <button class="btn">Display</button> &nbsp;
-            <button class="btn">Edit</button> &nbsp;
-            <button class="btn">Delete</button>
-          </td>
+          <td>{{ item.GradeId }}</td>          
         </tr>
       } 
       </tbody>

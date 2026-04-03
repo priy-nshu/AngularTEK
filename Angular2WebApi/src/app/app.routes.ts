@@ -5,6 +5,6 @@ import { StudentDetails } from './components/student-details/student-details';
 
 export const routes: Routes = [
     {path:'studentlist',component: StudentsList},
-    {path:'studentId',component:StudentDetails},
+    {path:'studentId/:id',component:StudentDetails},
     //{path:'',component:Home,pathMatch:'full'},
 ];
