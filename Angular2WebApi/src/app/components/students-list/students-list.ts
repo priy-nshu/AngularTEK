@@ -15,16 +15,13 @@ import { Router, RouterLink, ActivatedRoute } from '@angular/router'; // Added A
 export class StudentsList implements OnInit {
   stdList: Student[] = [];
   
-  // Using modern 'inject' or constructor injection works
   private studentService = inject(StudentService);
   private router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
 
   ngOnInit() {
-    // Corrected syntax: Just call getData when the component loads
-    this.getData();
+    //this.getData();
     
-    // If you specifically need to react to route data changes:
     this.activatedRoute.data.subscribe({
       next: (data) => {
         console.log('Route data:', data);
